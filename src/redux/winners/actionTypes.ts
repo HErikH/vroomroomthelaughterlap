@@ -1,0 +1,8 @@
+export const WINNERS_ACTION_TYPES = {
+  SET_WINNERS: 'winners/SET_WINNERS',
+  ADD_WINNER: 'winners/ADD_WINNER',
+  UPDATE_WINNER: 'winners/UPDATE_WINNER',
+  SET_CURRENT_PAGE: 'winners/SET_CURRENT_PAGE',
+  SET_TOTAL_WINNERS: 'winners/SET_TOTAL_WINNERS',
+  SET_SORT: 'winners/SET_SORT'
+} as const;

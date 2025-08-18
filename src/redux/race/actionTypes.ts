@@ -1,0 +1,7 @@
+export const RACE_ACTION_TYPES = {
+  START_RACE: 'race/START_RACE',
+  FINISH_RACE: 'race/FINISH_RACE',
+  RESET_RACE: 'race/RESET_RACE',
+  SET_WINNER: 'race/SET_WINNER',
+  CAR_FINISHED: 'race/CAR_FINISHED'
+} as const;
