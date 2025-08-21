@@ -1,0 +1,72 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+@import "../../../styles/buttons.scss";
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: $spacing-xl 0;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  gap: $spacing-xs;
+  align-items: center;
+
+  li {
+    &.active {
+      a {
+        background: $primary-color;
+        color: white;
+        border-color: $primary-color;
+      }
+    }
+
+    &.disabled {
+      a {
+        color: lighten($secondary-color, 20%);
+        cursor: not-allowed;
+
+        &:hover {
+          background: transparent;
+          border-color: lighten($secondary-color, 30%);
+        }
+      }
+    }
+
+    a {
+      display: block;
+      padding: $spacing-sm $spacing-md;
+      color: $primary-color;
+      text-decoration: none;
+      border: 1px solid lighten($secondary-color, 30%);
+      border-radius: 4px;
+      transition: all $transition-fast;
+      font-size: 0.9rem;
+
+      &:hover {
+        background: lighten($primary-color, 45%);
+        border-color: $primary-color;
+      }
+
+      @include respond-to(mobile) {
+        padding: $spacing-xs $spacing-sm;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .break {
+    a {
+      border: none;
+      background: transparent;
+      color: $secondary-color;
+
+      &:hover {
+        background: transparent;
+        border: none;
+      }
+    }
+  }
+}

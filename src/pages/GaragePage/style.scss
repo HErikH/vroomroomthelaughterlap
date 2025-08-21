@@ -1,0 +1,26 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/buttons.scss';
+
+.garage-view__header {
+  margin-bottom: $spacing-xl;
+}
+
+.garage-view__title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: $dark-color;
+  margin-bottom: $spacing-lg;
+
+  @include respond-to(mobile) {
+    font-size: 1.5rem;
+  }
+}
+
+.garage-view__cars {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-xl;
+}

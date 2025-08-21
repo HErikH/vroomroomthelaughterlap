@@ -1,0 +1,69 @@
+.btn {
+  @include button-base;
+
+  &--primary {
+    background: $primary-color;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background: darken($primary-color, 10%);
+    }
+  }
+
+  &--secondary {
+    background: $secondary-color;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background: darken($secondary-color, 10%);
+    }
+  }
+
+  &--success {
+    background: $success-color;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background: darken($success-color, 10%);
+    }
+  }
+
+  &--danger {
+    background: $danger-color;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background: darken($danger-color, 10%);
+    }
+  }
+
+  &--warning {
+    background: $warning-color;
+    color: $dark-color;
+
+    &:hover:not(:disabled) {
+      background: darken($warning-color, 10%);
+    }
+  }
+
+  &--cancel {
+    background: $light-color;
+    color: $dark-color;
+    border: 1px solid $secondary-color;
+
+    &:hover:not(:disabled) {
+      background: darken($light-color, 5%);
+    }
+  }
+
+  &--small {
+    padding: $spacing-xs $spacing-sm;
+    font-size: 0.85rem;
+  }
+
+  &--large {
+    padding: $spacing-md $spacing-lg;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+}

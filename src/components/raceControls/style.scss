@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/buttons.scss';
+
+.race-controls {
+  display: flex;
+  gap: $spacing-lg;
+  justify-content: flex-start;
+  margin: $spacing-lg 0;
+  padding-left: $spacing-lg;
+
+  @include respond-to(mobile) {
+    gap: $spacing-md;
+    flex-direction: column;
+    align-items: center;
+  }
+}
