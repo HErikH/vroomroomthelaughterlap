@@ -17,7 +17,7 @@ export const raceReducer = (
         ...state,
         isRunning: true,
         winner: null,
-        finishedCars: [],
+        // finishedCars: [],
       };
 
     case RACE_ACTION_TYPES.FINISH_RACE:

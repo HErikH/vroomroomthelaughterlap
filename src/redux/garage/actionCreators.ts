@@ -1,7 +1,10 @@
 import type {
   T_AddCar,
+  T_ClearCreateForm,
+  T_ClearEditForm,
   T_DeleteCar,
   T_GenerateCars,
+  T_SetCarPosition,
   T_SetCars,
   T_SetCreating,
   T_SetCurrentPage,
@@ -9,6 +12,8 @@ import type {
   T_SetSelectedCar,
   T_SetTotalCars,
   T_UpdateCar,
+  T_UpdateCreateForm,
+  T_UpdateEditForm,
 } from "./types";
 import { GARAGE_ACTION_TYPES } from "./actionTypes";
 
@@ -72,4 +77,33 @@ export const generateCars = (
 ): T_GenerateCars => ({
   type: GARAGE_ACTION_TYPES.GENERATE_CARS,
   payload: cars,
+});
+
+export const setCarPosition = (
+  car: T_SetCarPosition["payload"]
+): T_SetCarPosition => ({
+  type: GARAGE_ACTION_TYPES.SET_CAR_POSITION,
+  payload: car,
+});
+
+export const updateCreateForm = (
+  formData: T_UpdateCreateForm["payload"]
+): T_UpdateCreateForm => ({
+  type: GARAGE_ACTION_TYPES.UPDATE_CREATE_FORM,
+  payload: formData,
+});
+
+export const updateEditForm = (
+  formData: T_UpdateEditForm["payload"]
+): T_UpdateEditForm => ({
+  type: GARAGE_ACTION_TYPES.UPDATE_EDIT_FORM,
+  payload: formData,
+});
+
+export const clearCreateForm = (): T_ClearCreateForm => ({
+  type: GARAGE_ACTION_TYPES.CLEAR_CREATE_FORM,
+});
+
+export const clearEditForm = (): T_ClearEditForm => ({
+  type: GARAGE_ACTION_TYPES.CLEAR_EDIT_FORM,
 });

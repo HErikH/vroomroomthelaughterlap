@@ -12,12 +12,16 @@ export type T_CarWithWins = {
   bestTime?: number;
 } & T_Car;
 
+export type T_WinnerSortBy = "wins" | "time";
+
+export type T_WinnerSortOrder = "ASC" | "DESC";
+
 export type T_WinnersState = {
   winners: T_CarWithWins[];
   currentPage: number;
   totalWinners: number;
-  sortBy: "wins" | "time";
-  sortOrder: "asc" | "desc";
+  sortBy: T_WinnerSortBy;
+  sortOrder: T_WinnerSortOrder;
 };
 
 export type T_SetWinners = {
@@ -48,8 +52,8 @@ export type T_SetTotalWinners = {
 export type T_SetSort = {
   type: typeof WINNERS_ACTION_TYPES.SET_SORT;
   payload: {
-    sortBy: "wins" | "time";
-    sortOrder: "asc" | "desc";
+    sortBy: T_WinnerSortBy;
+    sortOrder: T_WinnerSortOrder;
   };
 };
 

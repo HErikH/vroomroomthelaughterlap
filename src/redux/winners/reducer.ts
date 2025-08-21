@@ -7,7 +7,7 @@ const initialState: T_WinnersState = {
   currentPage: 1,
   totalWinners: 0,
   sortBy: "wins",
-  sortOrder: "desc",
+  sortOrder: "DESC",
 };
 
 export const winnersReducer = (

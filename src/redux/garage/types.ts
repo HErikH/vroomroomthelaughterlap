@@ -1,11 +1,5 @@
 import type { GARAGE_ACTION_TYPES } from "./actionTypes";
 
-export type T_Car = {
-  id: number;
-  name: string;
-  color: string;
-};
-
 export type T_GarageState = {
   cars: T_Car[];
   currentPage: number;
@@ -13,6 +7,23 @@ export type T_GarageState = {
   selectedCarId: number | null;
   editingCar: T_Car | null;
   isCreating: boolean;
+  formState: {
+    createForm: {
+      name: string;
+      color: string;
+    };
+    editForm: {
+      name: string;
+      color: string;
+    };
+  };
+};
+
+export type T_Car = {
+  id: number;
+  name: string;
+  color: string;
+  position?: number;
 };
 
 export type T_SetCars = {
@@ -65,6 +76,29 @@ export type T_GenerateCars = {
   payload: T_Car[];
 };
 
+export type T_SetCarPosition = {
+  type: typeof GARAGE_ACTION_TYPES.SET_CAR_POSITION;
+  payload: Pick<T_Car, "id" | "position">;
+};
+
+export type T_UpdateCreateForm = {
+  type: typeof GARAGE_ACTION_TYPES.UPDATE_CREATE_FORM;
+  payload: Partial<T_GarageState["formState"]["createForm"]>;
+};
+
+export type T_UpdateEditForm = {
+  type: typeof GARAGE_ACTION_TYPES.UPDATE_EDIT_FORM;
+  payload: Partial<T_GarageState["formState"]["editForm"]>;
+};
+
+export type T_ClearCreateForm = {
+  type: typeof GARAGE_ACTION_TYPES.CLEAR_CREATE_FORM;
+};
+
+export type T_ClearEditForm = {
+  type: typeof GARAGE_ACTION_TYPES.CLEAR_EDIT_FORM;
+};
+
 export type T_GarageActions =
   | T_SetCars
   | T_AddCar
@@ -75,4 +109,9 @@ export type T_GarageActions =
   | T_SetEditingCar
   | T_SetCreating
   | T_SetTotalCars
-  | T_GenerateCars;
+  | T_GenerateCars
+  | T_SetCarPosition 
+  | T_UpdateCreateForm
+  | T_UpdateEditForm
+  | T_ClearCreateForm
+  | T_ClearEditForm;
