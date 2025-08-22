@@ -70,7 +70,8 @@ export const stopSingleRace = (carId: number) => {
   return async (dispatch: T_Dispatch) => {
     try {
       // Stop animation
-      stopAnimateCar(carId, undefined, dispatch);
+      stopAnimateCar(carId, 0, dispatch);
+      dispatch(resetRace());
 
       await axios.patch(`${API_BASE}/engine?id=${carId}&status=stopped`);
     } catch (error) {
