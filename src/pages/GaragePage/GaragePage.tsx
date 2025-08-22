@@ -63,6 +63,7 @@ export function GaragePage() {
           onReset={handleResetRace}
           isRunning={isRaceRunning}
           finishedCars={finishedCars}
+          cars={cars}
         />
       </div>
 
